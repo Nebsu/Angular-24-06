@@ -5,10 +5,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CategoryService {
-  categories : any[] = [];
+  categories: any[] = [];
+  private categoriesLoaded: boolean = false;
+
   constructor(private http: HttpClient) { }
 
   getCategories() {
+    if (this.categoriesLoaded) {
+      return;
+    }
+
     this.http.get('http://localhost:3000/categories').subscribe((categories: any) => {
       for (const category of categories) {
         console.log(category);
@@ -17,6 +23,7 @@ export class CategoryService {
           label: category.categoryLabel,
         });
       }
+      this.categoriesLoaded = true;
     });
   }
 }

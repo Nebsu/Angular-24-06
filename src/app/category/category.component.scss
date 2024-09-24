@@ -1,0 +1,18 @@
+.box-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 3vh;
+  background-color: rgb(240, 240, 240);
+  padding: 15px;
+  width: 20vw;
+  height: 10vh;
+  border-radius: 10px;
+}
+
+.category_list {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20vw;
+}
