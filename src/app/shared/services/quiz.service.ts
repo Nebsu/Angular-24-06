@@ -45,6 +45,7 @@ export class QuizService {
           this.quizContent.push({
               id: question.id,
               question: question.questionLabel,
+              categoryId : question.categoryId,
               answers
           });
         });
