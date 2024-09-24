@@ -7,6 +7,10 @@ import { CategoryService } from '../shared/category.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent {
+  categories = this.categoryService.categories;
   constructor(private categoryService : CategoryService) { }
-  
+  ngOnInit(): void {
+    this.categoryService.getCategories();
+    console.log(this.categories);
+  }
 }

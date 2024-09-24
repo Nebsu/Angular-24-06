@@ -10,10 +10,13 @@ export class CategoryService {
 
   getCategories() {
     this.http.get('http://localhost:3000/categories').subscribe((categories: any) => {
-      this.categories.push({
-        id: categories.id,
-        label: categories.categoryLabel,
-      });
+      for (const category of categories) {
+        console.log(category);
+        this.categories.push({
+          id: category.id,
+          label: category.categoryLabel,
+        });
+      }
     });
   }
 }

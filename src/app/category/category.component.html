@@ -1,1 +1,8 @@
-<p>category works!</p>
+<section>
+    <h2 class="category_title">Choisissez une catégorie</h2>
+    <ul class="category_list">
+        <li class="category_item" *ngFor="let category of categories">
+        <a [routerLink]="['/quiz', category.id]">{{ category.label }}</a>
+        </li>
+    </ul>
+</section>
