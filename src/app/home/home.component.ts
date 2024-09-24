@@ -27,6 +27,6 @@ export class HomeComponent implements OnInit {
   }
 
   navigateToCategory() {
-    this.router.navigate(['/category']);
+    this.router.navigate(['/category', this.playerName]);
   }
 }
