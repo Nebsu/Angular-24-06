@@ -13,5 +13,6 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.quizService.getQuizContent();
+    this.quizService.getNameCategory();
   }
 }

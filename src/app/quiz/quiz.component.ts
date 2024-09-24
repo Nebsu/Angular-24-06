@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { QuizService } from "../shared/services/quiz.service";
 
@@ -10,6 +10,7 @@ import { QuizService } from "../shared/services/quiz.service";
 export class QuizComponent implements OnInit {
   isQuizFinished = this.quizService.isQuizFinished;
   playerName = '';
+  categoryLabel = this.quizService.categoryLabel;
 
   constructor(
     private quizService: QuizService,

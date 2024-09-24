@@ -1,27 +1,3 @@
-.box-categories {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 3vh;
-  background-color: rgb(216, 216, 216);
-  padding: 15px;
-  width: 20vw;
-  height: 10vh;
-  border-radius: 10px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.box-categories:hover {
-  background-color: rgb(56, 56, 56);
-  color: rgb(240, 240, 240);
-}
-
 .category_list {
   position: relative;
   left: 50%;

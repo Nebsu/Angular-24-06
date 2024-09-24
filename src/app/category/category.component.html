@@ -10,9 +10,7 @@
     </form>
     <ul class="category_list">
         <li class="category_item" *ngFor="let category of filteredCategories()">
-            <div class="box-categories" [routerLink]="['/quiz', category.id, playerName]" role="button">
-                <a>{{ category.label }}</a>
-            </div>
+            <app-card [category]="category" [playerName]="playerName"></app-card>
         </li>
     </ul>
 </section>
