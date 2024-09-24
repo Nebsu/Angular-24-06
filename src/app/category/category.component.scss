@@ -1,13 +1,25 @@
 .box-categories {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 3vh;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(216, 216, 216);
   padding: 15px;
   width: 20vw;
   height: 10vh;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.box-categories:hover {
+  background-color: rgb(56, 56, 56);
+  color: rgb(240, 240, 240);
 }
 
 .category_list {
@@ -15,4 +27,33 @@
   left: 50%;
   transform: translateX(-50%);
   width: 20vw;
+}
+
+.category_title {
+  font-size: 2em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.recherche {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.recherche input {
+  width: 20vw;
+  height: 5vh;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-color: rgb(240, 240, 240);
 }

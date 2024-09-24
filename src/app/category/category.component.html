@@ -1,8 +1,16 @@
 <section>
     <h2 class="category_title">Choisissez une catégorie</h2>
+    <form class="recherche">
+        <div style="position: relative; display: inline-block;">
+            <input type="text" placeholder="Rechercher une catégorie" [(ngModel)]="searchTerm" name="searchTerm">
+            <button type="button" (click)="resetSearch()" *ngIf="searchTerm" style="position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                &times;
+            </button>
+        </div>
+    </form>
     <ul class="category_list">
-        <li class="category_item" *ngFor="let category of categories">
-            <div class="box-categories" [routerLink]="['/quiz', category.id]" role="button">
+        <li class="category_item" *ngFor="let category of filteredCategories()">
+            <div class="box-categories" [routerLink]="['/quiz', category.id, playerName]" role="button">
                 <a>{{ category.label }}</a>
             </div>
         </li>

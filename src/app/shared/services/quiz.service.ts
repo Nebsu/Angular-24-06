@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,10 @@ export class QuizService {
   score = 0;
   isQuizFinished = false;
   playerName: string = '';
+  categoryId: number = 0;
+  private quizLoaded: boolean = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   checkAnswers() {
     this.score = 0;
@@ -39,17 +42,22 @@ export class QuizService {
   }
 
   getQuizContent() {
+    if (this.quizLoaded) return;
     this.http.get('http://localhost:3000/questions').subscribe((questions: any) => {
       for (const question of questions) {
         this.http.get(`http://localhost:3000/answers?questionId=${question.id}`).subscribe((answers: any) => {
-          this.quizContent.push({
-              id: question.id,
-              question: question.questionLabel,
-              categoryId : question.categoryId,
-              answers
-          });
+          console.log(this.categoryId);
+          if(this.categoryId == question.categoryId){
+            this.quizContent.push({
+                id: question.id,
+                question: question.questionLabel,
+                categoryId : question.categoryId,
+                answers
+            });
+          }
         });
       }
+      this.quizLoaded = true;
     });
   }
 
@@ -58,5 +66,6 @@ export class QuizService {
     this.playerAnswers = [];
     this.score = 0;
     this.isQuizFinished = false;
+    this.quizLoaded = false;
   }
 }
