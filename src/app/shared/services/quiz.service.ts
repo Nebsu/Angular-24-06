@@ -43,13 +43,11 @@ export class QuizService {
   }
 
   getNameCategory(){
-    // recupérer le nom de la catégorie en fonctipon de l'id avec une requete
     this.http.get('http://localhost:3000/categories').subscribe((categories: any) => {
       for (const category of categories) {
         if(this.categoryId == category.id){
           console.log(category.categoryLabel);
           this.categoryLabel = category.categoryLabel;
-          return category.categoryLabel;
         }
       }
     });

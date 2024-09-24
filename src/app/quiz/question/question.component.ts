@@ -12,7 +12,7 @@ export class QuestionComponent implements OnInit {
   constructor(private quizService: QuizService) { }
 
   ngOnInit(): void {
-    this.quizService.getQuizContent();
     this.quizService.getNameCategory();
+    this.quizService.getQuizContent();
   }
 }
